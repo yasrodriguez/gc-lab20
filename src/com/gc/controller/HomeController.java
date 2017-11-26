@@ -1,8 +1,13 @@
 package com.gc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.gc.dto.User;
 
 /*
  * author: Yasmin Rodriguez
@@ -18,9 +23,17 @@ public class HomeController {
 		return "register";
 	}
 	
-	@RequestMapping("/registrationConfirmation")
-	public ModelAndView getConfirmation() {
+	@RequestMapping(value="/addUser", method=RequestMethod.POST)
+	public String addUser(Model model, @RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
+			@RequestParam("email") String email, @RequestParam("phone") String phoneNumber, @RequestParam("password") String password) {
+		User newUser = new User();
+		newUser.setFirstName(firstName);
+		newUser.setLastName(lastName);
+		newUser.setEmail(email);
+		newUser.setPhoneNumber(phoneNumber);
+		newUser.setPassword(password);
 		
-		return new ModelAndView("register", "", "");
+		model.addAttribute("newUser", newUser);
+		return "confirmation";
 	}
 }

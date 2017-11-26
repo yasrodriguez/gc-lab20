@@ -9,7 +9,7 @@
 </head>
 <body>
 <h3><strong>Please fill the form to register!</strong></h3>
-<form>
+<form action="/CoffeeShopWebApp/addUser" method="post">
 First Name: <input type="text" name="firstName"><br>
 Last Name:  <input type="text" name="lastName"><br>
 Email: <input type="text" name="email"><br>

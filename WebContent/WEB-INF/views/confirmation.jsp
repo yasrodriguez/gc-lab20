@@ -9,7 +9,8 @@
 </head>
 <body>
 
-${message}
+Hello ${newUser}
+
 
 </body>
 </html>
