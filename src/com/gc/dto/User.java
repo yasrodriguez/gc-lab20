@@ -1,11 +1,16 @@
 package com.gc.dto;
 
+import java.util.ArrayList;
+
 public class User {
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String phoneNumber;
 	private String password;
+	private String gender;
+	private String city;
+	private ArrayList<String> favoriteDrinks;
 	
 	public User() {
 		firstName = "";
@@ -53,6 +58,30 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public ArrayList<String> getFavoriteDrinks() {
+		return favoriteDrinks;
+	}
+
+	public void setFavoriteDrinks(ArrayList<String> favoriteDrinks) {
+		this.favoriteDrinks = favoriteDrinks;
 	}
 
 	@Override

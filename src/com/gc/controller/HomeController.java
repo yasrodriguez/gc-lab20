@@ -25,14 +25,17 @@ public class HomeController {
 	
 	@RequestMapping(value="/addUser", method=RequestMethod.POST)
 	public ModelAndView addUser(Model model, @RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-			@RequestParam("email") String email, @RequestParam("phone") String phoneNumber, @RequestParam("password") String password) {
+			@RequestParam("email") String email, @RequestParam("phone") String phoneNumber, @RequestParam("password") String password,
+			@RequestParam("gender") String gender, @RequestParam("city") String city) {
 		User newUser = new User();
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);
 		newUser.setEmail(email);
 		newUser.setPhoneNumber(phoneNumber);
 		newUser.setPassword(password);
-		
+		newUser.setGender(gender);
+		newUser.setCity(city);
+				
 		return new ModelAndView("confirmation", "newUser", newUser);
 	}
 }

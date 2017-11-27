@@ -15,21 +15,40 @@
 </head>
 <body>
 <h3><strong>Please fill the form to register!</strong></h3>
+<div>
 <form action="/CoffeeShopWebApp/addUser" name="registration" method="post">
 <label>First Name:</label>
 <input type="text" name="firstName"><br>
 <label>Last Name:</label> 
 <input type="text" name="lastName"><br>
 <label>Email:</label>
-<input type="text" name="email"><br>
+<input type="email" name="email"><br>
 <label>Phone:</label>
-<input type="text" name="phone"><br>
+<input type="tel" name="phone"><br>
+<label>Gender:</label><br>
+<input type="radio" name="gender" value="male">Male<br>
+<input type="radio" name="gender" value="female">Female<br>
+<label>City: </label><br>
+<select name="city">
+<option value="Ann Arbor">Ann Arbor</option>
+<option value="Detroit">Detroit</option>
+<option value="Other">Other</option>
+</select>
+<br>
 <label>Password:</label> 
-<input type="password" name="password"><br><br>
-
+<input type="password" name="password"><br>
+<label>Mark all the types of drinks you like:</label> 
+<fieldset>
+<input type="checkbox" name="brewedCoffee" value="Brewed">Hot brewed coffee<br>
+<input type="checkbox" name="icedCoffee" value="Iced">Iced coffee<br>
+<input type="checkbox" name="espresso" value="Espresso">Espresso<br>
+<input type="checkbox" name="latte" value="Latte">Latte<br>
+<input type="checkbox" name="tea" value="Tea">Tea<br>
+<input type="checkbox" name="chocolate" value="Chocolate">Hot Chocolate<br><br>
+</fieldset>
 <button type="submit">Register</button>
-
 </form>
+</div>
 
 </body>
 </html>
